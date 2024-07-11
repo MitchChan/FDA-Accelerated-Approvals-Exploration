@@ -3,9 +3,9 @@ This project analyzes FDA accelerated drug approvals, focusing on identifying re
 Steps Performed
 1. Import Libraries and Load Data
 
-    Langauge: Python 3.12.4
-    Libraries: Import required libraries, including what is in requirements.txt
-    Loading Data: Load the CDER Drug and Biologic Accelerated Approvals PDF from https://www.fda.gov/drugs/nda-and-bla-approvals/accelerated-approvals
+    Langauge: Python 3.12.4.
+    Libraries: Import required libraries, including what is in requirements.txt.
+    Loading Data: Load the CDER Drug and Biologic Accelerated Approvals PDF from https://www.fda.gov/drugs/nda-and-bla-approvals/accelerated-approvals.
 
 2. Data Cleaning and Preparation
 
@@ -18,7 +18,7 @@ Steps Performed
 3. Data Merging with OpenFDA data (See the OpenFDA Notebook Steps)
 
     Import the OpenFDA parquet file as a pandas dataframe
-    Initial Merges: The datasets are merged based the unique application type, number, and supplement number
+    Initial Merges: The datasets are merged based the unique application type, number, and supplement number.
     Transformations: Columns cleaned and route of administration was joined with the primary dataframe. Manual cleaning was performed to fill in missing values by manual review of Drugs@FDA labeling.
     Calculations: Additional columns are calculated, such as the time taken for approval in months.
 
@@ -44,7 +44,7 @@ OpenFDA Notebook Steps Performed
         
 3. Store the data being pulled from OpenFDA
 
-    Set requests per minute and delay for the max limit from OpenFDA
+    Set requests per minute and delay for the max limit from OpenFDA.
     If response code is returned 200, then the records will be pulled. If needed, additional data will be pulled at a delay to ensure all data is pulled given the pull limitations per minute.
 
 4. Check and normalize the JSON data to be ingested into a pandas dataframe
