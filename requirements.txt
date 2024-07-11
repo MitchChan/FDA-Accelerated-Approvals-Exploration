@@ -1,0 +1,15 @@
+pandas
+SQLAlchemy
+PyPDF2==1.26.0
+camelot-py[cv]
+python-dateutil
+configparser
+python-dotenv
+requests
+urllib3
+matplotlib
+tabula-py
+fuzzywuzzy
+python-Levenshtein
+fastparquet
+pyarrow
