@@ -4,10 +4,12 @@ Steps Performed
 1. Import Libraries and Load Data
 
     Langauge: Python 3.12.4.
+   
     Libraries: Import required libraries, including what is in requirements.txt.
+   
     Loading Data: Load the CDER Drug and Biologic Accelerated Approvals PDF from https://www.fda.gov/drugs/nda-and-bla-approvals/accelerated-approvals.
 
-2. Data Cleaning and Preparation
+3. Data Cleaning and Preparation
 
     Extract tables from each page of the PDF using tabula's OCR, and combine into a single dataframe
     Remove artifacts within values and remove background text rows pulled in via OCR
@@ -15,20 +17,20 @@ Steps Performed
     Date Conversion: Date columns are converted to datetime objects for easier manipulation and calculation.
     Creating Age Categories: Age groups are created by finding the terms "Adult", "Pediatric", and "Adult" and "Pediatric" within the approved indication wording. Indications without these wordings included in the indication text are categorized as "Unspecified".
     
-3. Data Merging with OpenFDA data (See the OpenFDA Notebook Steps)
+4. Data Merging with OpenFDA data (See the OpenFDA Notebook Steps)
 
     Import the OpenFDA parquet file as a pandas dataframe
     Initial Merges: The datasets are merged based the unique application type, number, and supplement number.
     Transformations: Columns cleaned and route of administration was joined with the primary dataframe. Manual cleaning was performed to fill in missing values by manual review of Drugs@FDA labeling.
     Calculations: Additional columns are calculated, such as the time taken for approval in months.
 
-4. Specific Data Handling
+5. Specific Data Handling
 
     Drug company origin: Manual review of drug company web sites was performed to find the company's primary origin.
     Fee Assignment: PDUFA fees are assigned to the merged data based on submission categories and dates.
     Conditions: Specific conditions are applied to update the 'Fees' column, particularly considering changes in fee collection policies over time given PDUFA VI removed efficacy supplement fees.
 
-5. Export Dataframe
+6. Export Dataframe
 
     Export: The final dataframe is exported to an Excel file for further analysis and visualizations in Tableau.
 
